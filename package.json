@@ -1,5 +1,5 @@
 {
-  "name": "@bumkom/ui",
+  "name": "@bumeter/ui",
   "version": "1.2.0",
   "description": "The Bumeter screens (Overview, Conversations, Skills, Settings), built and ready to load in a Tauri window or a VS Code webview.",
   "license": "GPL-3.0-or-later",

@@ -1,4 +1,4 @@
-# Tag vX.Y.Z → publish @bumkom/ui X.Y.Z to npm (the tag must match package.json).
+# Tag vX.Y.Z → publish @bumeter/ui X.Y.Z to npm (the tag must match package.json).
 name: Release
 on:
   push:
