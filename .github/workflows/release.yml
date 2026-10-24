@@ -1,4 +1,5 @@
 # Tag vX.Y.Z → publish @bumeter/ui X.Y.Z to npm (the tag must match package.json).
+# Trusted Publishing: npm trusts this workflow through GitHub OIDC, so there is no npm token.
 name: Release
 on:
   push:
@@ -16,9 +17,9 @@ jobs:
           node-version: 22
           registry-url: https://registry.npmjs.org
           cache: npm
+      # Trusted Publishing needs npm 11.5.1 or later.
+      - run: npm install -g npm@latest
       - run: test "v$(node -p "require('./package.json').version")" = "$GITHUB_REF_NAME"
       - run: npm ci
       - run: npx vitest run
-      - run: npm publish --provenance
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - run: npm publish
